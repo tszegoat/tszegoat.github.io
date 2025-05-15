@@ -32,7 +32,7 @@ body {
 header {
     background-color: var(--logo-header-bg); /* UPDATED: Use logo background color */
     color: var(--background-white); /* Default text color for header elements */
-    padding: 40px 0 30px; /* Adjusted padding for logo */
+    padding: 50px 0 35px; /* UPDATED: Increased padding slightly for larger logo */
     text-align: center;
 }
 
@@ -40,12 +40,10 @@ header {
 #header-logo {
     display: block; /* Allows margin auto for centering */
     margin: 0 auto 15px auto; /* Center logo and add space below */
-    max-width: 320px; /* Adjust max-width as needed */
-    width: 70%; /* Responsive width, up to max-width */
+    max-width: 420px; /* UPDATED: Increased for a larger logo */
+    width: 80%;       /* UPDATED: Adjusted for better responsiveness with new max-width */
     height: auto; /* Maintain aspect ratio */
 }
-
-/* Removed header h1 and header h1 em styles as H1 is replaced by logo image */
 
 header .tagline {
     font-size: 21px;
@@ -340,12 +338,12 @@ footer p em {
     body {
         font-size: 16px;
     }
-    /* Removed header h1 styling as it's replaced by logo */
     header .tagline {
         font-size: 18px;
     }
     #header-logo {
-        max-width: 280px; /* Slightly smaller max-width for logo on tablets */
+        max-width: 350px; /* UPDATED: Increased from 280px */
+        width: 75%;       /* UPDATED: Adjusted for this breakpoint */
     }
     .content-section h2 {
         font-size: 32px;
@@ -371,10 +369,9 @@ footer p em {
 }
 
 @media (max-width: 480px) {
-    /* Removed header h1 styling */
     #header-logo {
-        max-width: 220px; /* Smaller max-width for logo on mobile */
-        width: 60%; /* Adjust percentage if needed for small screens */
+        max-width: 280px; /* UPDATED: Increased from 220px */
+        width: 85%;       /* UPDATED: Adjusted from 60% to take more space on small mobile */
     }
     .content-section {
         padding: 60px 0;
