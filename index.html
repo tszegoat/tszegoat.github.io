@@ -1,132 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physics Olympiad Training SG</title>
-  <!-- Inline CSS for simplicity. Uses Apple-like minimalist style -->
-  <style>
-    /* Base styling */
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #1d1d1f;  /* near-black text for good contrast on white */
-      line-height: 1.6;
-    }
-    .container {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    section {
-      padding: 60px 0;
-    }
-    h1, h2, h3 {
-      font-weight: 600;  /* semi-bold for headings */
-      margin: 0;
-    }
-    h1 {
-      font-size: 2.5em;   /* large hero title */
-      text-align: center;
-      margin-bottom: 0.5em;
-    }
-    h2 {
-      font-size: 1.8em;
-      text-align: center;
-      margin-bottom: 0.5em;
-    }
-    h3 {
-      font-size: 1.3em;
-      margin-bottom: 0.2em;
-    }
-    p {
-      font-size: 1em;
-      margin: 0 0 1em;
-    }
-    /* Team section styles */
-    .team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      text-align: center;
-      margin: 20px 0;
-    }
-    .team-grid .member {
-      /* Each member block could have a fixed width if needed, but flexible is fine */
-    }
-    /* Syllabus list styles */
-    .syllabus ul {
-      list-style-type: disc;
-      padding-left: 1.2em;
-      margin: 1em 0;
-    }
-    .syllabus li {
-      margin: 0.5em 0;
-    }
-    /* Sign-up button style */
-    .cta-button {
-      display: inline-block;
-      background-color: #007aff; /* Apple-like blue CTA */
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.1em;
-    }
-    .cta-button:hover {
-      background-color: #005bb5; /* Darker blue on hover */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Physics Olympiad Initiative</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Favicon (replace with your own if you have one) -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
-  <div class="container">
-    <!-- Introduction Section -->
-    <section class="intro">
-      <h1>Free Physics Olympiad Training in Singapore</h1>
-      <p>Our team’s mission is to make olympiad education free, accessible and effective; 
-         and create a community of physics lovers to discuss all things physics.</p>
-    </section>
-    <!-- Team (EXCO) Section -->
-    <section class="team">
-      <h2>Our Team</h2>
-      <div class="team-grid">
-        <div class="member">
-          <h3>Huang Haoyang</h3>
-          <p>External IC</p>
+
+    <header>
+        <div class="container">
+            <h1>Singapore Physics Olympiad Initiative</h1>
+            <p class="tagline">Free, Accessible, Effective Olympiad Training.</p>
         </div>
-        <div class="member">
-          <h3>Li Xinyang</h3>
-          <p>Academic IC</p>
+    </header>
+
+    <main>
+        <section id="introduction" class="content-section">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>
+                    Welcome to our initiative! Our team's mission is to make physics olympiad education free,
+                    accessible, and effective for all students in Singapore. We aim to create a vibrant
+                    community of physics lovers to discuss all things physics, share insights, and
+                    foster a passion for the subject.
+                </p>
+            </div>
+        </section>
+
+        <section id="exco" class="content-section alt-bg">
+            <div class="container">
+                <h2>Meet the EXCO</h2>
+                <p class="section-intro">
+                    We are a team of passionate physics enthusiasts, all teammates on the
+                    Singapore APhO 2025 team, dedicated to sharing our knowledge.
+                </p>
+                <div class="exco-grid">
+                    <div class="exco-member">
+                        <h3>[Your Name]</h3>
+                        <p>Singapore APhO 2025 Team</p>
+                        <p class="member-bio">A short, inspiring sentence about your passion for physics or teaching.</p>
+                    </div>
+                    <div class="exco-member">
+                        <h3>[Friend 1's Name]</h3>
+                        <p>Singapore APhO 2025 Team</p>
+                        <p class="member-bio">A short, inspiring sentence about their passion.</p>
+                    </div>
+                    <div class="exco-member">
+                        <h3>[Friend 2's Name]</h3>
+                        <p>Singapore APhO 2025 Team</p>
+                        <p class="member-bio">A short, inspiring sentence about their passion.</p>
+                    </div>
+                    <!-- Add more members as needed -->
+                    <div class="exco-member">
+                        <h3>[Friend X's Name]</h3>
+                        <p>Singapore APhO 2025 Team</p>
+                        <p class="member-bio">A short, inspiring sentence about their passion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="syllabus" class="content-section">
+            <div class="container">
+                <h2>Lesson Syllabus & Schedule</h2>
+                <p class="section-intro">
+                    Our curriculum is designed to comprehensively cover the Singapore Physics Olympiad (SPhO) syllabus.
+                    Specific schedules and time slots will be announced upon registration and participant availability.
+                </p>
+
+                <div class="syllabus-grid">
+                    <div class="syllabus-category">
+                        <h3>Mechanics</h3>
+                        <ul>
+                            <li>Kinematics</li>
+                            <li>Statics</li>
+                            <li>Dynamics</li>
+                            <li>Oscillations</li>
+                            <li>Rotation</li>
+                            <li>Gravitation</li>
+                            <li>Fluid Mechanics</li>
+                        </ul>
+                    </div>
+
+                    <div class="syllabus-category">
+                        <h3>Electromagnetism (EM)</h3>
+                        <ul>
+                            <li>Electrostatics</li>
+                            <li>Electric Current, DC Circuits</li>
+                            <li>Magnetostatics</li>
+                            <li>Lorentz Force</li>
+                            <li>Electromagnetic Induction (EMI)</li>
+                            <li>AC/RLC Circuits</li>
+                        </ul>
+                    </div>
+
+                    <div class="syllabus-category">
+                        <h3>Thermodynamics</h3>
+                        <ul>
+                            <li>Ideal Gases, Thermodynamics Laws</li>
+                            <li>Methods of Heat Transfer</li>
+                            <li>Statistical Mechanics</li>
+                        </ul>
+                    </div>
+
+                    <div class="syllabus-category">
+                        <h3>Waves & Optics</h3>
+                        <ul>
+                            <li>Wave Equation & Standing Waves</li>
+                            <li>Interference & Diffraction</li>
+                            <li>Geometrical Optics</li>
+                        </ul>
+                    </div>
+
+                    <div class="syllabus-category">
+                        <h3>Relativity</h3>
+                        <ul>
+                            <li>Kinematics</li>
+                            <li>Dynamics</li>
+                        </ul>
+                    </div>
+                </div>
+                 <p class="schedule-info">
+                    <strong>Schedule & Time Slots:</strong> Detailed schedules and specific time slots for lessons will be communicated to registered participants. We aim to offer flexible options to accommodate different school timetables.
+                </p>
+            </div>
+        </section>
+
+        <section id="signup" class="content-section alt-bg call-to-action">
+            <div class="container">
+                <h2>Join Us!</h2>
+                <p>
+                    Ready to embark on your physics olympiad journey? Sign up for our training program and
+                    become part of our growing community.
+                </p>
+                <div class="signup-buttons">
+                    <a href="YOUR_STUDENT_SIGNUP_FORM_LINK_HERE" class="button" target="_blank">Student Sign-Up</a>
+                    <a href="YOUR_VOLUNTEER_SIGNUP_FORM_LINK_HERE" class="button button-secondary" target="_blank">Volunteer/Mentor Sign-Up (Optional)</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> Singapore Physics Olympiad Initiative. All rights reserved.</p>
+            <p>Making Physics Olympiads Accessible to All.</p>
         </div>
-        <div class="member">
-          <h3>Leroy Chua</h3>
-          <p>Academic IC</p>
-        </div>
-      </div>
-      <p>They were all teammates on the Singapore APhO 2025 team.</p>
-    </section>
-    <!-- Syllabus & Schedule Section -->
-    <section class="syllabus">
-      <h2>Syllabus &amp; Schedule</h2>
-      <ul>
-        <li><strong>Mechanics</strong>: Kinematics, Statics, Dynamics, Oscillations, Rotation, Gravitation, Fluid Mechanics</li>
-        <li><strong>EM</strong>: Electrostatics, Electric Current/DC Circuits, Magnetostatics, Lorentz Force, EMI, AC/RLC</li>
-        <li><strong>Thermo</strong>: Ideal Gases/Thermodynamics Laws, Heat Transfer Methods, Statistical Mechanics</li>
-        <li><strong>Waves</strong>: Wave Equation/Standing Waves, Interference &amp; Diffraction, Geometrical Optics</li>
-        <li><strong>Relativity</strong>: Kinematics, Dynamics</li>
-      </ul>
-      <p><strong>Training Time:</strong> Tentatively Saturday 4&ndash;6 PM.</p>
-    </section>
-    <!-- Sign-up Section -->
-    <section class="signup">
-      <h2>Sign Up</h2>
-      <p>Interested in joining our training program? Register your interest by signing up below:</p>
-      <p><a href="#" class="cta-button">Sign Up Now</a></p>
-    </section>
-  </div>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
-
-
