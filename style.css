@@ -11,33 +11,37 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 17px; /* Common Apple base font size */
+    font-size: 17px;
     line-height: 1.6;
     color: var(--secondary-color);
     background-color: var(--background-white);
-    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
-    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 980px; /* Common Apple content width */
+    max-width: 980px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 /* Header */
 header {
-    background-color: var(--secondary-color); /* Dark header like Apple's navigation */
+    background-color: var(--secondary-color);
     color: var(--background-white);
     padding: 60px 0 40px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 48px; /* Large, impactful heading */
+    font-size: 56px; /* Slightly larger for a single word like FIZIKA */
     font-weight: 600;
     margin: 0 0 10px 0;
     letter-spacing: -0.022em;
+}
+header h1 em {
+    font-style: italic;
+    font-weight: 600; /* Ensure italic still has weight */
 }
 
 header .tagline {
@@ -74,48 +78,63 @@ header .tagline {
 }
 
 .content-section p {
-    font-size: 19px; /* Slightly larger paragraph text */
+    font-size: 19px;
     line-height: 1.65;
-    max-width: 700px; /* Keep text lines from getting too long */
+    max-width: 700px;
     margin: 0 auto 20px auto;
+}
+.content-section p em {
+    font-style: italic;
 }
 
 
 /* EXCO Section */
 .exco-grid {
     display: grid;
+    /* For 3 members, this ensures they are centered nicely and don't stretch too much */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
+    max-width: 900px; /* Limit width if fewer items */
+    margin-left: auto;
+    margin-right: auto;
 }
+@media (min-width: 960px) { /* On larger screens, fix to 3 columns for 3 members */
+    .exco-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 
 .exco-member {
     background-color: var(--background-white);
     padding: 30px;
-    border-radius: 18px; /* Apple's rounded corners */
+    border-radius: 18px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: left; /* Align text inside cards to the left */
+    text-align: left;
 }
-.content-section.alt-bg .exco-member { /* If exco cards are on light grey bg */
-     /* No need to change, white cards on light grey are fine */
-}
-
 
 .exco-member h3 {
     font-size: 24px;
     font-weight: 600;
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: var(--primary-color);
 }
 
-.exco-member p {
+.exco-member p { /* School/Team info */
     font-size: 16px;
     margin-bottom: 5px;
     color: var(--secondary-color);
-    max-width: none; /* Allow text to fill the card */
+    max-width: none;
     text-align: left;
 }
+.exco-member p:nth-of-type(2) { /* Team info, make it slightly lighter */
+    color: var(--text-color-light);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
 .exco-member p.member-bio {
     font-size: 15px;
     color: var(--text-color-light);
@@ -125,6 +144,33 @@ header .tagline {
 
 
 /* Syllabus Section */
+.current-class-info {
+    background-color: var(--background-light);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.current-class-info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--secondary-color); /* Darker, as it's a key info heading */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.current-class-info p {
+    font-size: 17px;
+    color: var(--text-color-light);
+    margin-bottom: 5px;
+}
+.current-class-info p strong {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+
 .syllabus-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -135,14 +181,10 @@ header .tagline {
 }
 
 .syllabus-category {
-    background-color: var(--background-light); /* Light background for categories */
+    background-color: var(--background-light);
     padding: 25px;
     border-radius: 12px;
 }
-.content-section:not(.alt-bg) .syllabus-category { /* If syllabus is on white bg */
-    /* background-color: var(--background-light); is fine */
-}
-
 
 .syllabus-category h3 {
     font-size: 22px;
@@ -166,7 +208,7 @@ header .tagline {
 }
 
 .syllabus-category li::before {
-    content: "▹"; /* A nice unicode arrow */
+    content: "▹";
     color: var(--primary-color);
     font-weight: bold;
     position: absolute;
@@ -174,20 +216,7 @@ header .tagline {
     top: 0;
 }
 
-.schedule-info {
-    margin-top: 40px;
-    font-size: 17px;
-    color: var(--text-color-light);
-    background-color: var(--background-light);
-    padding: 20px;
-    border-radius: 12px;
-}
-.content-section:not(.alt-bg) .schedule-info {
-    background-color: var(--background-light); /* Ensure light background if main section is white */
-}
-
-
-/* Call to Action / Sign Up */
+/* Call to Action / Join Us Section */
 .call-to-action h2 {
     margin-bottom: 15px;
 }
@@ -199,24 +228,32 @@ header .tagline {
 
 .signup-buttons {
     margin-top: 20px;
+    margin-bottom: 30px; /* Space before community links */
 }
 
 .button {
-    display: inline-block;
+    display: inline-flex; /* For aligning icon and text */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
     background-color: var(--primary-color);
     color: var(--background-white);
     padding: 12px 28px;
     font-size: 17px;
     font-weight: 500;
     text-decoration: none;
-    border-radius: 8px; /* Common Apple button roundness */
+    border-radius: 8px;
     margin: 10px 5px;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease;
     border: 1px solid transparent;
+    min-width: 200px; /* Give buttons a consistent min width */
+}
+.button svg.icon {
+    margin-right: 8px; /* Space between icon and text */
+    /* fill is currentColor by default for inline SVGs, matching button text color */
 }
 
 .button:hover {
-    background-color: #0077ed; /* Slightly lighter blue */
+    background-color: #0077ed;
     transform: translateY(-1px);
 }
 .button:active {
@@ -228,9 +265,54 @@ header .tagline {
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
 }
+.button.button-secondary svg.icon {
+    fill: var(--primary-color); /* Ensure secondary button icon is also primary color */
+}
 
 .button.button-secondary:hover {
-    background-color: rgba(0, 113, 227, 0.05); /* Very light blue tint */
+    background-color: rgba(0, 113, 227, 0.05);
+}
+
+.community-links {
+    margin-top: 30px;
+}
+.community-links p {
+    font-size: 17px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+
+/* Contact Us Section */
+#contact {
+    background-color: var(--background-white); /* Or var(--background-light) if preferred */
+}
+.contact-details {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items if they are few */
+    gap: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: var(--secondary-color);
+}
+.contact-item svg.icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color); /* Icon color */
+    margin-right: 12px;
+}
+.contact-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.contact-item a:hover {
+    text-decoration: underline;
 }
 
 
@@ -245,8 +327,11 @@ footer {
 
 footer p {
     margin: 5px 0;
-    font-size: 14px; /* Ensure footer p tags are also small */
+    font-size: 14px;
     color: var(--text-color-light);
+}
+footer p em {
+    font-style: italic;
 }
 
 /* Responsive adjustments */
@@ -255,7 +340,7 @@ footer p {
         font-size: 16px;
     }
     header h1 {
-        font-size: 36px;
+        font-size: 42px;
     }
     header .tagline {
         font-size: 18px;
@@ -266,21 +351,26 @@ footer p {
     .content-section .section-intro, .content-section p, .call-to-action p {
         font-size: 18px;
     }
-    .exco-member h3, .syllabus-category h3 {
+    .exco-member h3, .syllabus-category h3, .current-class-info h3 {
         font-size: 20px;
     }
     .button {
         padding: 10px 22px;
         font-size: 16px;
+        min-width: 180px;
+    }
+    .contact-item {
+        font-size: 17px;
+    }
+    .contact-item svg.icon {
+        width: 20px;
+        height: 20px;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 30px;
-    }
-    header .tagline {
-        font-size: 16px;
+        font-size: 36px;
     }
     .content-section {
         padding: 60px 0;
@@ -290,5 +380,19 @@ footer p {
     }
     .content-section .section-intro, .content-section p, .call-to-action p {
         font-size: 17px;
+    }
+    .button {
+        width: 90%; /* Make buttons take more width on small screens */
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex; /* Ensure flex properties apply */
+    }
+    .contact-details {
+        align-items: flex-start; /* Align contact items to start on mobile */
+        padding-left: 10px; /* Add some padding for better look */
+    }
+    .contact-item {
+        font-size: 16px;
     }
 }
