@@ -6,6 +6,9 @@
     --background-white: #ffffff;
     --text-color-light: #6e6e73; /* Lighter text for secondary info */
     --border-color: #d2d2d7;
+    /* New variable for logo header background */
+    --logo-header-bg: #202038; /* Dark blue/purple from your logo background */
+    --header-tagline-color: rgba(235, 235, 240, 0.9); /* Clean, slightly off-white for tagline */
 }
 
 body {
@@ -27,27 +30,27 @@ body {
 
 /* Header */
 header {
-    background-color: var(--secondary-color);
-    color: var(--background-white);
-    padding: 60px 0 40px;
+    background-color: var(--logo-header-bg); /* UPDATED: Use logo background color */
+    color: var(--background-white); /* Default text color for header elements */
+    padding: 40px 0 30px; /* Adjusted padding for logo */
     text-align: center;
 }
 
-header h1 {
-    font-size: 56px; /* Slightly larger for a single word like FIZIKA */
-    font-weight: 600;
-    margin: 0 0 10px 0;
-    letter-spacing: -0.022em;
+/* Style for the logo image */
+#header-logo {
+    display: block; /* Allows margin auto for centering */
+    margin: 0 auto 15px auto; /* Center logo and add space below */
+    max-width: 320px; /* Adjust max-width as needed */
+    width: 70%; /* Responsive width, up to max-width */
+    height: auto; /* Maintain aspect ratio */
 }
-header h1 em {
-    font-style: italic;
-    font-weight: 600; /* Ensure italic still has weight */
-}
+
+/* Removed header h1 and header h1 em styles as H1 is replaced by logo image */
 
 header .tagline {
     font-size: 21px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--header-tagline-color); /* UPDATED: Using a clear light color for tagline */
     margin: 0;
 }
 
@@ -91,15 +94,14 @@ header .tagline {
 /* EXCO Section */
 .exco-grid {
     display: grid;
-    /* For 3 members, this ensures they are centered nicely and don't stretch too much */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
-    max-width: 900px; /* Limit width if fewer items */
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
-@media (min-width: 960px) { /* On larger screens, fix to 3 columns for 3 members */
+@media (min-width: 960px) {
     .exco-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -122,14 +124,14 @@ header .tagline {
     color: var(--primary-color);
 }
 
-.exco-member p { /* School/Team info */
+.exco-member p {
     font-size: 16px;
     margin-bottom: 5px;
     color: var(--secondary-color);
     max-width: none;
     text-align: left;
 }
-.exco-member p:nth-of-type(2) { /* Team info, make it slightly lighter */
+.exco-member p:nth-of-type(2) {
     color: var(--text-color-light);
     font-size: 15px;
     margin-bottom: 10px;
@@ -156,7 +158,7 @@ header .tagline {
 .current-class-info h3 {
     font-size: 24px;
     font-weight: 600;
-    color: var(--secondary-color); /* Darker, as it's a key info heading */
+    color: var(--secondary-color);
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -228,13 +230,13 @@ header .tagline {
 
 .signup-buttons {
     margin-top: 20px;
-    margin-bottom: 30px; /* Space before community links */
+    margin-bottom: 30px;
 }
 
 .button {
-    display: inline-flex; /* For aligning icon and text */
-    align-items: center; /* Vertical alignment */
-    justify-content: center; /* Horizontal alignment */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--primary-color);
     color: var(--background-white);
     padding: 12px 28px;
@@ -245,11 +247,10 @@ header .tagline {
     margin: 10px 5px;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease;
     border: 1px solid transparent;
-    min-width: 200px; /* Give buttons a consistent min width */
+    min-width: 200px;
 }
 .button svg.icon {
-    margin-right: 8px; /* Space between icon and text */
-    /* fill is currentColor by default for inline SVGs, matching button text color */
+    margin-right: 8px;
 }
 
 .button:hover {
@@ -266,7 +267,7 @@ header .tagline {
     border: 1px solid var(--primary-color);
 }
 .button.button-secondary svg.icon {
-    fill: var(--primary-color); /* Ensure secondary button icon is also primary color */
+    fill: var(--primary-color);
 }
 
 .button.button-secondary:hover {
@@ -285,13 +286,13 @@ header .tagline {
 
 /* Contact Us Section */
 #contact {
-    background-color: var(--background-white); /* Or var(--background-light) if preferred */
+    background-color: var(--background-white);
 }
 .contact-details {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items if they are few */
+    align-items: center;
     gap: 20px;
 }
 .contact-item {
@@ -303,7 +304,7 @@ header .tagline {
 .contact-item svg.icon {
     width: 24px;
     height: 24px;
-    fill: var(--primary-color); /* Icon color */
+    fill: var(--primary-color);
     margin-right: 12px;
 }
 .contact-item a {
@@ -339,11 +340,12 @@ footer p em {
     body {
         font-size: 16px;
     }
-    header h1 {
-        font-size: 42px;
-    }
+    /* Removed header h1 styling as it's replaced by logo */
     header .tagline {
         font-size: 18px;
+    }
+    #header-logo {
+        max-width: 280px; /* Slightly smaller max-width for logo on tablets */
     }
     .content-section h2 {
         font-size: 32px;
@@ -369,8 +371,10 @@ footer p em {
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 36px;
+    /* Removed header h1 styling */
+    #header-logo {
+        max-width: 220px; /* Smaller max-width for logo on mobile */
+        width: 60%; /* Adjust percentage if needed for small screens */
     }
     .content-section {
         padding: 60px 0;
@@ -382,15 +386,15 @@ footer p em {
         font-size: 17px;
     }
     .button {
-        width: 90%; /* Make buttons take more width on small screens */
+        width: 90%;
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
-        display: flex; /* Ensure flex properties apply */
+        display: flex;
     }
     .contact-details {
-        align-items: flex-start; /* Align contact items to start on mobile */
-        padding-left: 10px; /* Add some padding for better look */
+        align-items: flex-start;
+        padding-left: 10px;
     }
     .contact-item {
         font-size: 16px;
