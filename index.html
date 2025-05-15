@@ -1,17 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My STEM Project</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Olympiad Classes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #f9f9f9;
+      color: #1c1c1e;
+      line-height: 1.6;
+    }
+    header, section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    header {
+      background-color: #ffffff;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 0.3em;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #555;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    .exco, .classes {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .member, .class {
+      margin-bottom: 15px;
+    }
+    .member span, .class span {
+      font-weight: bold;
+      display: inline-block;
+      width: 160px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      padding: 20px;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My STEM Project!</h1>
-  <p>This is a student-led Olympiad learning platform.</p>
+  <header>
+    <h1>Free Olympiad Classes</h1>
+    <p>Empowering students with free, high-quality STEM Olympiad preparation — led by students, for students.</p>
+  </header>
 
-  <button onclick="sayHello()">Click Me</button>
+  <section>
+    <h2>Our Mission</h2>
+    <p>
+      We believe that talent should never be limited by access. Our mission is to provide completely free, high-quality classes in Physics Olympiad and other STEM disciplines, led by passionate student mentors who want to give back. We aim to build a supportive, inclusive community of curious learners — and help every student realise their full academic potential.
+    </p>
+  </section>
 
-  <script src="script.js"></script>
+  <section class="exco">
+    <h2>Executive Committee</h2>
+    <div class="member"><span>President:</span> Alex Tan</div>
+    <div class="member"><span>Academic IC:</span> Jamie Lim</div>
+    <div class="member"><span>Outreach IC:</span> Priya Das</div>
+    <div class="member"><span>Ops & Tech IC:</span> Ryan Lee</div>
+    <div class="member"><span>Finance & Admin IC:</span> Cheryl Ong</div>
+  </section>
+
+  <section class="classes">
+    <h2>Available Classes</h2>
+    <div class="class"><span>Intro to Physics Olympiad:</span> Saturdays, 10am–12pm</div>
+    <div class="class"><span>Intermediate Physics Problem Solving:</span> Sundays, 2pm–4pm</div>
+    <div class="class"><span>Olympiad Math Enrichment:</span> Fridays, 5pm–6:30pm</div>
+    <div class="class"><span>Research & Experimental Science:</span> Wednesdays, 4pm–5:30pm</div>
+  </section>
+
+  <footer>
+    &copy; 2025 Free Olympiad Classes. All rights reserved.
+  </footer>
 </body>
 </html>
 
