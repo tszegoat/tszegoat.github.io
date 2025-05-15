@@ -1,0 +1,294 @@
+/* Global Resets & Base Styles */
+:root {
+    --primary-color: #0071e3; /* Apple's vibrant blue */
+    --secondary-color: #1d1d1f; /* Apple's dark text color */
+    --background-light: #f5f5f7; /* Apple's light grey background */
+    --background-white: #ffffff;
+    --text-color-light: #6e6e73; /* Lighter text for secondary info */
+    --border-color: #d2d2d7;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 17px; /* Common Apple base font size */
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: var(--background-white);
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+.container {
+    max-width: 980px; /* Common Apple content width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color); /* Dark header like Apple's navigation */
+    color: var(--background-white);
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 48px; /* Large, impactful heading */
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.022em;
+}
+
+header .tagline {
+    font-size: 21px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.content-section.alt-bg {
+    background-color: var(--background-light);
+}
+
+.content-section h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.content-section .section-intro {
+    font-size: 21px;
+    color: var(--text-color-light);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.5;
+}
+
+.content-section p {
+    font-size: 19px; /* Slightly larger paragraph text */
+    line-height: 1.65;
+    max-width: 700px; /* Keep text lines from getting too long */
+    margin: 0 auto 20px auto;
+}
+
+
+/* EXCO Section */
+.exco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.exco-member {
+    background-color: var(--background-white);
+    padding: 30px;
+    border-radius: 18px; /* Apple's rounded corners */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: left; /* Align text inside cards to the left */
+}
+.content-section.alt-bg .exco-member { /* If exco cards are on light grey bg */
+     /* No need to change, white cards on light grey are fine */
+}
+
+
+.exco-member h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.exco-member p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    max-width: none; /* Allow text to fill the card */
+    text-align: left;
+}
+.exco-member p.member-bio {
+    font-size: 15px;
+    color: var(--text-color-light);
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+
+/* Syllabus Section */
+.syllabus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.syllabus-category {
+    background-color: var(--background-light); /* Light background for categories */
+    padding: 25px;
+    border-radius: 12px;
+}
+.content-section:not(.alt-bg) .syllabus-category { /* If syllabus is on white bg */
+    /* background-color: var(--background-light); is fine */
+}
+
+
+.syllabus-category h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.syllabus-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.syllabus-category li {
+    font-size: 17px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.syllabus-category li::before {
+    content: "▹"; /* A nice unicode arrow */
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.schedule-info {
+    margin-top: 40px;
+    font-size: 17px;
+    color: var(--text-color-light);
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: 12px;
+}
+.content-section:not(.alt-bg) .schedule-info {
+    background-color: var(--background-light); /* Ensure light background if main section is white */
+}
+
+
+/* Call to Action / Sign Up */
+.call-to-action h2 {
+    margin-bottom: 15px;
+}
+.call-to-action p {
+    font-size: 21px;
+    color: var(--text-color-light);
+    margin-bottom: 30px;
+}
+
+.signup-buttons {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    padding: 12px 28px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px; /* Common Apple button roundness */
+    margin: 10px 5px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    border: 1px solid transparent;
+}
+
+.button:hover {
+    background-color: #0077ed; /* Slightly lighter blue */
+    transform: translateY(-1px);
+}
+.button:active {
+    transform: translateY(0px);
+}
+
+.button.button-secondary {
+    background-color: var(--background-white);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.button.button-secondary:hover {
+    background-color: rgba(0, 113, 227, 0.05); /* Very light blue tint */
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--background-light);
+    color: var(--text-color-light);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px; /* Ensure footer p tags are also small */
+    color: var(--text-color-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    header h1 {
+        font-size: 36px;
+    }
+    header .tagline {
+        font-size: 18px;
+    }
+    .content-section h2 {
+        font-size: 32px;
+    }
+    .content-section .section-intro, .content-section p, .call-to-action p {
+        font-size: 18px;
+    }
+    .exco-member h3, .syllabus-category h3 {
+        font-size: 20px;
+    }
+    .button {
+        padding: 10px 22px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 30px;
+    }
+    header .tagline {
+        font-size: 16px;
+    }
+    .content-section {
+        padding: 60px 0;
+    }
+    .content-section h2 {
+        font-size: 28px;
+    }
+    .content-section .section-intro, .content-section p, .call-to-action p {
+        font-size: 17px;
+    }
+}
